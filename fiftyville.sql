@@ -1,4 +1,6 @@
--- Keep a log of any SQL queries you execute as you solve the mystery.
+
+--The following are a collection of queries used to query a schema of multiple tables all containing information related to solving a crime!
+
 -- Ran the following query to get crime scene reports from around the time of the crime taking place (28/7/21)
 SELECT * FROM crime_scene_reports WHERE day > 27 AND month > 6;
 -- Crime took place at 10:15am at the Humphrey Street Bakery, three witnesses were interviewed that day and all mentioned the bakery.
@@ -14,7 +16,7 @@ SELECT * FROM interviews WHERE day > 27 AND month > 6;
 SELECT * FROM bakery_security_logs WHERE
 year = 2021 AND month  = 7 AND day = 28 AND hour = 10 AND minute > 15 AND minute < 25;
 -- Relevant license plates are:
--- -- +-----+------+-------+-----+------+--------+----------+---------------+
+-- +-----+------+-------+-----+------+--------+----------+---------------+
 -- | id  | year | month | day | hour | minute | activity | license_plate |
 -- +-----+------+-------+-----+------+--------+----------+---------------+
 -- | 260 | 2021 | 7     | 28  | 10   | 16     | exit     | 5P2BI95       |
