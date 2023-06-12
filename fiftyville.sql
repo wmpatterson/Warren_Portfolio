@@ -1,6 +1,6 @@
 
 --The following are a collection of queries used to query a schema of multiple tables all containing information related to solving a crime!
-
+--
 -- Ran the following query to get crime scene reports from around the time of the crime taking place (28/7/21)
 SELECT * FROM crime_scene_reports WHERE day > 27 AND month > 6;
 -- Crime took place at 10:15am at the Humphrey Street Bakery, three witnesses were interviewed that day and all mentioned the bakery.
@@ -57,10 +57,7 @@ WHERE atm_transactions.year = 2021 AND
 atm_transactions.month = 7 AND
 atm_transactions.day = 28 AND
 atm_transactions.atm_location = "Leggett Street";
-
-
-
-
+--
 -- Which yielded the following names and associated account numbers which withdrew money on Leggett Street
 -- +---------+----------------+--------+
 -- |  name   | account_number | amount |
@@ -99,8 +96,7 @@ ORDER BY DURATION ASC;
 --
 -- Now let's use these on the people table to find out names of callers/receivers
 -- First create specific CTE's for callers or receivers to query
-
-
+--
 WITH callers AS (
     SELECT caller FROM phone_calls
 WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 61
